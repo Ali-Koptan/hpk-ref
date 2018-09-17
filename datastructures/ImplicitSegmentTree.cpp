@@ -103,6 +103,7 @@ private:
         checkLazy(n);
         if(n->Start > TEnd || n->End < TStart)
         {
+            //insert out of range query code here...
             return 0;
         }
         if(n->Start >= TStart && n->End <= TEnd)

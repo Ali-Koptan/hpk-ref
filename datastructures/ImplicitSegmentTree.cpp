@@ -125,6 +125,8 @@ private:
         {
             return;
         }
+        cleanUp(n->left);
+        cleanUp(n->right);
         delete n->left, n->right;
         n->left = n->right = nullptr;
     }

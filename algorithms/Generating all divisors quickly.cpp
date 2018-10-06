@@ -11,16 +11,13 @@ void GeneratePrimes()
     {
         spf[i] = i;
     }
-    for(int i = 2; i <= Range; i++)
+    for(int i = 2; (long long)i*i <= Range; i++)
     {
         if(spf[i] == i)
         {
             for(int j = i; (long long int)j * i <= Range; j++)
             {
-                if(spf[j * i] == j * i)
-                {
-                    spf[j * i] = i;
-                }
+                spf[j * i] = i;
             }
         }
     }

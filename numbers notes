@@ -1,0 +1,25 @@
+A number is divisible by 3  if the sum of the digits is divisible by 3.
+a number is divisble by 4 if it's last two digits is divisible by 4
+a number is divisible by 5 if it ends by  a 0 or a 5. 
+a number is divisible by 6
+2 methods
+	1)check if it’s divisible by both 2 and 3.
+	2)It must be even and The sum of its digits must be divisible by 3.
+
+a number is divisble by 7
+Take the last digit of the number you’re testing and double it.
+Subtract this number from the rest of the digits in the original number.
+If this new number is either 0 or if it’s a number that’s divisible by 7, then you know that the original number is also divisible by 7. If you can’t easily tell yet if the new number is divisible by 7, go back to the first step with this new smaller number and try again.
+
+a number is divisble by 8
+if the last three digits of the number are divisible by 8. 
+
+a number is divisble by 9
+add up the digits in the number and check if the resulting sum is divisible by 9.
+
+a number is divisble by 11
+Here an easy way to test for divisibility by 11. Take the alternating sum of the digits in the number, read from left to right. If that is divisible by 11, so is the original number.
+
+So, for instance, 2728 has alternating sum of digits 2-7+2-8 = -11. Since -11 is divisible by 11, so is 2728.
+
+ number is divisible by 12, you have to first check if it is divisible by 3 and 4. If it is divisible by both 3 and 4, then the number is divisible by 12.

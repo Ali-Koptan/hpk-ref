@@ -1,0 +1,48 @@
+#include <bits/stdc++.h>
+using namespace std;
+struct edge
+{
+    int from, to, cost;
+};
+int main()
+{
+   ios::sync_with_stdio(false);
+    cin.tie(0); cout.tie(0);
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        bool done = 0;
+        vector<edge>listt;
+        int cost[1009] = {};
+        int n,m,w;
+        cin>>n>>m;
+        edge e;
+        for(int i=0;i<m;i++)
+        {
+            cin>>e.from>>e.to>>e.cost;
+            listt.push_back(e);
+        }
+        for(int i=2;i<=n;i++)cost[i] = 1e9;
+        for(int i=0;i<n;i++)
+        {
+            for(int z = 0 ;z<listt.size();z++)
+            {
+                e = listt[z];
+                if(cost[e.to] > cost[e.from] + e.cost)
+                {
+                    cost[e.to] = cost[e.from] + e.cost;
+                    if(i == n-1)
+                    {
+                        cout<<"possible"<<endl;
+                        done = 1;
+                        break;
+                    }
+                }
+            }
+        }
+        if(!done)cout<<"not possible"<<endl;
+    }
+  return 0;
+}
+

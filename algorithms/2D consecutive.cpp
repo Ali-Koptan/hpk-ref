@@ -6,29 +6,40 @@ using namespace std;
 
 int main()
 {
-    int n, m, target;
+    int n, m;
     cin >> n >> m;
+    int arr[n][m];
     long long consc1[n], consc2[m], consc[n][m];
-    for(int i = 0; i < n; i++)
-    {
-        int x;
-        cin >> x;
-        consc1[i] = x + consc1[i-1] * (i != 0);
-    }
-    for(int i = 0; i < m; i++)
-    {
-        int x;
-        cin >> x;
-        consc2[i] = x + consc2[i-1] * (i != 0);
-    }
-    cin >> target;
     for(int i = 0; i < n; i++)
     {
         for(int j = 0; j < m; j++)
         {
-            consc[i][j] = consc1[i] * consc2[j];
+            int x;
+            cin >> x;
+            consc[i][j] = x;
+            if(i > 0)
+            {
+                consc[i][j] += consc[i-1][j];
+            }
+            if(j > 0)
+            {
+                consc[i][j] += consc[i][j-1];
+            }
+            if(i > 0 && j > 0)
+            {
+                consc[i][j] -= consc[i-1][j-1];
+            }
         }
     }
+    for(int i = 0; i < n; i++)
+    {
+        for(int j = 0; j < m; j++)
+        {
+            cout << consc[i][j] << ' ';
+        }
+        cout << '\n';
+    }
+    /*
     int ans = 0;
     for(int y1 = 0; y1 < n; y1++)
     {
@@ -61,5 +72,6 @@ int main()
         }
     }
     cout << ans;
+    */
     return 0;    
 }
